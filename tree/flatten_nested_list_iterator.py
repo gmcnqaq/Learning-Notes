@@ -53,14 +53,20 @@ class NestedInteger(object):
 
 
 def build_nested_list(nums):
-    i, n = 0, len(nums)
-    while i < n:
+    # i, n = 0, len(nums)
+    # while i < n:
+    #     if isinstance(nums[i], int):
+    #         nums[i] = NestedInteger(nums[i])
+    #     else:
+    #         first = nums.pop(i)
+    #         nums.insert(i, NestedInteger(build_nested_list(first)))
+    #     i += 1
+    for i in range(len(nums)):
         if isinstance(nums[i], int):
             nums[i] = NestedInteger(nums[i])
         else:
             first = nums.pop(i)
             nums.insert(i, NestedInteger(build_nested_list(first)))
-        i += 1
     return nums
 
 
@@ -82,16 +88,19 @@ class NestedIterator(object):
     def has_next(self):
         while self.stack and not self.stack[0].is_integer():
             first = self.stack.pop(0).get_list()
-            for i in range(len(first) - 1, -1, -1):
-                self.stack.insert(0, first[i])
+            # for i in range(len(first) - 1, -1, -1):
+            #     self.stack.insert(0, first[i])
+            for i in range(len(first)):
+                self.stack.insert(i, first[i])
         return bool(self.stack)
-
 
 
 # Your NestedIterator object will be instantiated and called as such:
 # i, v = NestedIterator(nestedList), []
 # while i.hasNext(): v.append(i.next())
 
+# 反思：实际上其实就是一个 N 叉树，叶子节点是 Integer 类型，其 val 字段非空；其他节点都是 List<NestedInteger> 类型，其 val 字段为空，但是 list 字段非空
+# 所以把一个 NestedInteger 扁平化，实际上等价于遍历一棵 N 叉树的所有叶子结点
 
 if __name__ == '__main__':
     arr1 = [[1, 1], 2, [3, 3]]
@@ -104,4 +113,3 @@ if __name__ == '__main__':
     #     print(iter2.next())
     for i in iter2:
         print(i)
-

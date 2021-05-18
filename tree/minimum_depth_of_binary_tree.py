@@ -26,6 +26,6 @@ def min_depth(root):
 
 if __name__ == '__main__':
     A = BinaryTree()
-    arr = [1, 2, 3 ,4 ,5]
+    arr = [1, 2, 3, 4, 5]
     A.root = build_tree_level(arr)
     print(min_depth(A.root))

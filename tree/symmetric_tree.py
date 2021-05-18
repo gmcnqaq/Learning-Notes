@@ -14,10 +14,10 @@ def rec_is_symmetric(root):
 
     def dfs(left, right):
         # 两个节点都为空
-        if not (left or right):
+        if not left and not right:
             return True
         # 两个节点有一个一空
-        if not (left and right):
+        elif not left or not right:
             return False
         # 两个节点的值不相等
         if left.val != right.val:
@@ -34,9 +34,9 @@ def iter_is_symmetric(root):
         left = queue.pop(0)
         right = queue.pop(0)
         # 如果两个节点都为空就继续循环，两者有一个为空就返回false
-        if not (left or right):
+        if not left and not right:
             continue
-        if not (left and right):
+        elif not left or not right:
             return False
         if left.val != right.val:
             return False

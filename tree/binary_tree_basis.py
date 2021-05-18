@@ -15,7 +15,7 @@ class BinaryTree(object):
         self.root = root
 
     def find_val_level(self, val):
-        if not val:
+        if val is None:
             return None
         queue = [self.root]
         while queue:
@@ -42,6 +42,8 @@ def build_tree_level(nums):
         if left is not None:
             parent.left = BinaryTreeNode(left)
             queue.append(parent.left)
+        if i >= length:
+            break
         right = nums[i]
         i += 1
         if right is not None:
@@ -352,3 +354,5 @@ if __name__ == '__main__':
     print('中序遍历：', inorder_morris(A.root))
     print('后序遍历：', postorder_morris(A.root))
     print('层次遍历：', level_order(A.root))
+    B = build_tree_level([1, 2, 3, 4, 5, 6, 7])
+    print(preorder_morris(B))

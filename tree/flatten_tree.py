@@ -1,5 +1,5 @@
 from binary_tree_basis import BinaryTree
-from binary_tree_basis import inorder_morris, build_tree_level
+from binary_tree_basis import inorder_morris, build_tree_level, preorder_morris
 
 
 # 二叉树展开为链表
@@ -17,7 +17,7 @@ def rec_flatten(root):
      Do not return anything, modify root in-place instead.
     """
     if not root:
-        pass
+        return None
     else:
         rec_flatten(root.left)
         rec_flatten(root.right)
@@ -53,10 +53,11 @@ if __name__ == '__main__':
     A = BinaryTree()
     nums = [1, 2, 5, 3, 4, None, 6]
     A.root = build_tree_level(nums)
-    print(inorder_morris(A.root))
+    print(preorder_morris(A.root))
     rec_flatten(A.root)
     print(inorder_morris(A.root))
     B = BinaryTree()
     B.root = build_tree_level(nums)
     iter_flatten(B.root)
     print(inorder_morris(B.root))
+

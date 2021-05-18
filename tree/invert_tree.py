@@ -19,7 +19,7 @@ def rec_invert_tree(root):
 def iter_invert_tree(root):
     if not root:
         return None
-    queue = [root, ]
+    queue = [root]
     while queue:
         curr = queue.pop(0)
         curr.left, curr.right = curr.right, curr.left

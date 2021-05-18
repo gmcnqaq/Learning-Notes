@@ -25,10 +25,13 @@ def lowest_common_ancestor(root, p, q):
         return root
     left = lowest_common_ancestor(root.left, p, q)
     right = lowest_common_ancestor(root.right, p, q)
+    # 如果 p 和 q 都在以 root 为根的树中
     if left is not None and right is not None:
         return root
+    # 如果 p 和 q 都不在以 root 为根的树中
     if not left and not right:
         return None
+    # 如果 p 和 q 只有一个存在于 以 root 为根的树中
     return right if not left else left
 
 

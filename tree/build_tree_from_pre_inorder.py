@@ -1,3 +1,5 @@
+from typing import List
+
 from binary_tree_basis import BinaryTree, BinaryTreeNode
 from binary_tree_basis import preorder_morris, inorder_morris
 
@@ -62,7 +64,7 @@ def iter_build_tree(preorder, inorder):
     if not preorder:
         return None
     root = BinaryTreeNode(preorder[0])
-    stack = [root]
+    stack: List[BinaryTreeNode] = [root]
     inorder_index = 0
     for i in range(1, len(preorder)):
         preorder_val = preorder[i]

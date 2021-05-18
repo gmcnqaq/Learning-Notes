@@ -10,7 +10,7 @@ class NaryTreeNode(object):
 
 
 class NaryTree(object):
-    def __iter__(self, root=None):
+    def __init__(self, root=None):
         self.root = root
 
 

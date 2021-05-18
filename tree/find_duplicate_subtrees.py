@@ -1,5 +1,5 @@
 from binary_tree_basis import BinaryTree
-from binary_tree_basis import preorder_morris
+from binary_tree_basis import preorder_morris, build_tree_level
 
 # 寻找重复的子树
 # LeetCode 652
@@ -29,12 +29,9 @@ import collections
 
 # 解法一：
 # 两个问题
-# 1. 如何指导以某个节点为根的这颗二叉树长啥样 ----> 序列化
-# 2. 如何指导是否重复，其他节点长啥样 ---> count
+# 1. 如何知道以某个节点为根的这颗二叉树长啥样 ----> 序列化
+# 2. 如何知道是否重复，其他节点长啥样 ---> count
 def find_duplicate_subtrees(root):
-    count = collections.Counter()
-    ans = []
-
     def serialize(node):
         if not node:
             return "#"
@@ -44,6 +41,8 @@ def find_duplicate_subtrees(root):
             ans.append(node)
         return serial
 
+    count = collections.Counter()
+    ans = []
     serialize(root)
     return ans
 
@@ -70,3 +69,13 @@ def find1_duplicate_subtrees(root):
 
     lookup(root)
     return ans
+
+
+if __name__ == '__main__':
+    nums = [1, 2, 3, 4, None, 2, 4, None, None, 4]
+    A = BinaryTree(build_tree_level(nums))
+    print(preorder_morris(A.root))
+    subtrees = find1_duplicate_subtrees(A.root)
+    print(subtrees)
+    for tree in subtrees:
+        print(preorder_morris(tree))

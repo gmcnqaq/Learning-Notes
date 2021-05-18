@@ -23,8 +23,13 @@ from binary_tree_basis import preorder_morris
 #     - [0,5] 中的最大值是 5 ，左边部分是 [0] ，右边部分是 [] 。
 #         - 只有一个元素，所以子节点是一个值为 0 的节点。
 #         - 空数组，无子节点。
-
-
+#           6
+#        /    \
+#       3      5
+#        \    /
+#         2  0
+#          \
+#           1
 # 对于构造二叉树的问题，根节点要做的就是想办法把自己构造出来
 def rec_construct_max_binary_tree(nums):
     if not nums:

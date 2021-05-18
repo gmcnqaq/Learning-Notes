@@ -69,7 +69,7 @@ class Codec(object):
             res.append(str(curr.val))
             queue.append(curr.left)
             queue.append(curr.right)
-        return ','.join(i for i in res)
+        return ','.join(res)
 
     def deserialize_level(self, data):
         if not data:
@@ -85,6 +85,8 @@ class Codec(object):
                 queue.append(left)
                 node.left = left
             i += 1
+            if i >= nodes_len:
+                break
             if values[i] is not None:
                 right = BinaryTreeNode(values[i])
                 queue.append(right)
