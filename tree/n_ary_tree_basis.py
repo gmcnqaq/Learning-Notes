@@ -14,8 +14,10 @@ class NaryTree(object):
         self.root = root
 
 
-def build_tree_level(nums):
-    pass
+def build_tree_level(nums, n):
+    if not nums:
+        return None
+    root = nums[0]
 
 
 def preorder_rec(root):
@@ -52,4 +54,4 @@ def preorder_iter(root):
         stack.extend(curr.children[::-1])
     return res
 
-
+# TODO

@@ -120,6 +120,7 @@ def sort_list_monkey(head: ListNode) -> ListNode:
 
 if __name__ == '__main__':
     nums = [-1, 5, 3, 4, 0]
+    import time
     l = build_linked_list(nums)
     # l.head = sort_list_td(l.head)
     l.head = sort_list_dt(l.head)

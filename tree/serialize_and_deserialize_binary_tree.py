@@ -13,7 +13,7 @@ from binary_tree_basis import preorder_morris, build_tree_level
 class Codec(object):
     def serialize_pre(self, root):
         """
-        Encode a tree to a single string
+        Encode a binary tree to a single string
         :param root:BinaryTreeNode
         :return:str
         """
