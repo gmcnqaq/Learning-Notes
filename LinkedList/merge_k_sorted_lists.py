@@ -87,9 +87,9 @@ def merge_k_lists_monkey(lists):
     dummy = ListNode(-1)
     p = dummy
 
-    for l in lists:
-        if l:
-            heapq.heappush(heap, l)
+    for lst in lists:
+        if lst:
+            heapq.heappush(heap, lst)
     while heap:
         node = heapq.heappop(heap)
         p.next = ListNode(node.val)

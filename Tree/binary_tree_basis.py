@@ -117,7 +117,7 @@ def level_order(root):
 
 # 迭代模板
 # 先将根节点 curr 和所有左孩子入栈，直至 curr 为空， 然后每弹出一个栈顶元素，就到达他的右孩子
-def iter1_preorder(root):
+def iter_preorder_templates(root):
     if not root:
         return []
     curr, stack, res = root, [], []
@@ -145,7 +145,7 @@ def iter_inorder(root):
     return res
 
 
-def iter1_postorder(root):
+def iter_postorder_template(root):
     if not root:
         return []
     curr, stack, res = root, [], []

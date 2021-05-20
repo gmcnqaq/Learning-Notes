@@ -11,6 +11,7 @@
     
     注意， 普通构造函数无法实现上述行为， 因为构造函数的设计决定了它必须总是返回一个新对象。
     ![](https://refactoringguru.cn/images/patterns/content/singleton/singleton-comic-1-zh.png?id=70da542e5e19f0df3dfc)
+    
     客户端甚至可能没有意识到它们一直都在使用同一个对象。
     
 2. **为该实例提供一个全局访问节点**。 还记得用过的那些存储重要对象的全局变量吗？ 它们在使用上十分方便， 但同时也非常不安全， 因为任何代码都有可能覆盖掉那些变量的内容， 从而引发程序崩溃。
@@ -110,7 +111,7 @@ singleton = Singleton()
 ```
 将上面的代码保存在文件 `mysingleton.py` 中，要使用时，直接在其他文件中导入此文件中的对象，这个对象即是单例模式的对象
 ```
-from a import singleton
+from mysingleton import Singleton
 ```
 
 ### 2. 使用装饰器

@@ -8,6 +8,8 @@
 # 输出：1
 # 解释：注意，要求返回第三大的数，是指在所有不同数字中排第三大的数。
 # 此例中存在两个值为 2 的数，它们都排第二。在所有不同数字中排第三大的数为 1 。
+import heapq
+
 
 # 解法一：
 def comp_third_max(nums):
@@ -31,9 +33,6 @@ def comp_third_max(nums):
 
 
 # 维护一个大小为 3 的小顶堆
-import heapq
-
-
 def heap_third_max(nums):
     nums = set(nums)
     res = []

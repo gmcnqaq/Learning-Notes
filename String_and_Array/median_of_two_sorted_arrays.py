@@ -45,3 +45,9 @@ def find_median_sorted_arrays(nums1, nums2):
         return get_kth_number((total_len + 1) // 2)
     else:
         return (get_kth_number(total_len // 2) + get_kth_number(total_len // 2 + 1)) / 2
+
+
+if __name__ == '__main__':
+    nums1 = [1, 2, 3, 4]
+    nums2 = [2, 6, 7, 9]
+    print(find_median_sorted_arrays(nums1, nums2))

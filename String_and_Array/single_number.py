@@ -7,4 +7,16 @@
 # 示例 2：
 # 输入：nums = [0,1,0,1,0,1,99]
 # 输出：99
+import collections
+from typing import List
 
+
+def single_number(nums: List[int]) -> int:
+    freq = collections.Counter(nums)
+    ans = [num for num, occ in freq.items() if occ == 1][0]
+    return ans
+
+
+if __name__ == '__main__':
+    nums = [0, 1, 0, 1, 9, 8, 9, 8, 12]
+    print(single_number(nums))

@@ -18,6 +18,7 @@ def build_tree_level(nums, n):
     if not nums:
         return None
     root = nums[0]
+    queue = [root]
 
 
 def preorder_rec(root):

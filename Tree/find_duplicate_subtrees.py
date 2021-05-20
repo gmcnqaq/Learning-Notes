@@ -51,7 +51,7 @@ def find_duplicate_subtrees(root):
 # 假设每棵子树都有一个唯一标识符：只有当两个子树的 id 相同时，认为这两个子树是相同的。
 # 一个节点 node 的左孩子 id 为 x，右孩子 id 为 y，那么该节点的 id 为 (node.val, x, y)。
 # 如果三元组 (node.val, x, y) 第一次出现，则创建一个这样的三元组记录该子树。如果已经出现过，则直接使用该子树对应的 id。
-def find1_duplicate_subtrees(root):
+def find_duplicate_subtrees_id(root):
     if not root:
         return None
     trees = collections.defaultdict()
@@ -75,7 +75,7 @@ if __name__ == '__main__':
     nums = [1, 2, 3, 4, None, 2, 4, None, None, 4]
     A = BinaryTree(build_tree_level(nums))
     print(preorder_morris(A.root))
-    subtrees = find1_duplicate_subtrees(A.root)
+    subtrees = find_duplicate_subtrees_id(A.root)
     print(subtrees)
     for tree in subtrees:
         print(preorder_morris(tree))
