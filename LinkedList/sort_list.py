@@ -1,7 +1,3 @@
-import heapq
-from linked_list_basis import ListNode, build_linked_list
-
-
 # LeetCode 148
 # 排序链表
 # 给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。
@@ -14,6 +10,9 @@ from linked_list_basis import ListNode, build_linked_list
 # 示例 3：
 # 输入：head = []
 # 输出：[]
+import heapq
+from linked_list_basis import ListNode, build_linked_list
+
 
 # 自顶向下归并排序
 # 找到链表的中点，以中点为分解，将链表拆分为两个子链表，对子链表排序，然后合并
@@ -121,8 +120,9 @@ def sort_list_monkey(head: ListNode) -> ListNode:
 if __name__ == '__main__':
     nums = [-1, 5, 3, 4, 0]
     import time
-    l = build_linked_list(nums)
-    # l.head = sort_list_td(l.head)
-    l.head = sort_list_dt(l.head)
-    # l.head = sort_list_monkey(l.head)
-    print(l.to_list())
+
+    lst = build_linked_list(nums)
+    # lst.head = sort_list_td(lst.head)
+    lst.head = sort_list_dt(lst.head)
+    # lst.head = sort_list_monkey(lst.head)
+    print(lst.to_list())

@@ -6,9 +6,9 @@
 # 示例 2：
 # 输入：nums = [5,1,1,2,0,0]
 # 输出：[0,0,1,1,2,5]
-from typing import List
-
 import time
+import random
+from typing import List
 from functools import wraps
 
 
@@ -25,6 +25,7 @@ def timethis(func):
 
 
 # 交换排序
+
 # 冒泡排序
 # 每次找出一个最大的元素
 # 时间复杂度度 O(n^2), 最好O(n)，空间复杂度 O(1)，稳定
@@ -39,6 +40,7 @@ def bubble_sort(nums: List[int]) -> List[int]:
 
 
 # 选择排序
+# 每次选出最小的元素
 # 选择排序不受输入数据的影响，即在任何情况下时间复杂度不变。选择排序每次选出最小的元素，因此需要遍历 n-1 次。
 # 时间复杂度 O(n^2)，最好 O(n^2)，空间复杂度 O(1)，不稳定
 @timethis
@@ -119,6 +121,30 @@ def merge_sort(nums: List[int]) -> List[int]:
 # 快速排序
 # 分而治之思想
 # 时间复杂度 O(nlong)，最坏 O(n^2)，最好 O(nlogn)，空间复杂度 O(nlogn)，不稳定
+def quick_sort(nums: List[int]) -> List[int]:
+    randomized_quick_sort(nums, 0, len(nums) - 1)
+    return nums
+
+
+def randomized_quick_sort(nums: List[int], left: int, right: int):
+    if left > right:
+        return
+    mid = randomized_partition(nums, left, right)
+    randomized_quick_sort(nums, left, mid - 1)
+    randomized_quick_sort(nums, mid + 1, right)
+
+
+def randomized_partition(nums: List[int], left: int, right: int) -> int:
+    pivot = random.randint(left, right)
+    nums[pivot], nums[right] = nums[right], nums[pivot]
+    i = left - 1
+    for j in range(left, right):
+        if nums[j] < nums[right]:
+            i += 1
+            nums[j], nums[i] = nums[i], nums[j]
+    i += 1
+    nums[i], nums[right] = nums[right], nums[i]
+    return i
 
 
 if __name__ == '__main__':
@@ -128,3 +154,5 @@ if __name__ == '__main__':
     print(insertion_sort(nums[:]))
     print(shell_sort(nums[:]))
     print(merge_sort(nums[:]))
+    print('quick_sort')
+    print(quick_sort(nums[:]))

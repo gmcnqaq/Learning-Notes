@@ -1,5 +1,3 @@
-from linked_list_basis import build_linked_list, LinkedList
-
 # 合并K个升序链表
 # LeetCode 23
 # 给你一个链表数组，每个链表都已经按升序排列。
@@ -22,7 +20,9 @@ from linked_list_basis import build_linked_list, LinkedList
 # 输入：lists = [[]]
 # 输出：[]
 import heapq
-from linked_list_basis import ListNode
+from linked_list_basis import LinkedList, \
+    build_linked_list, \
+    ListNode
 
 
 def merge_k_lists_partition(lists):
@@ -103,10 +103,10 @@ def merge_k_lists_monkey(lists):
 if __name__ == '__main__':
     nums = [[1, 4, 5], [1, 3, 4], [2, 6]]
     lists = [build_linked_list(i).head for i in nums]
-    l = LinkedList()
-    # l.head = merge_k_lists_partition(lists)
-    # print(l.to_list())
-    # l.head = merge_k_lists_priority_queue(lists)
-    # print(l.to_list())
-    l.head = merge_k_lists_monkey(lists)
-    print(l.to_list())
+    lst = LinkedList()
+    # lst.head = merge_k_lists_partition(lists)
+    # print(lst.to_list())
+    # lst.head = merge_k_lists_priority_queue(lists)
+    # print(lst.to_list())
+    lst.head = merge_k_lists_monkey(lists)
+    print(lst.to_list())
