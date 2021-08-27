@@ -1,4 +1,4 @@
-# 最长回文子序列
+de# 最长回文子序列
 # LeetCode 516
 # 给定一个字符串 s ，找到其中最长的回文子序列，并返回该序列的长度。可以假设 s 的最大长度为 1000 。
 # 示例 1:
@@ -9,7 +9,7 @@
 # 输入: "cbbd"
 # 输出: 2
 # 一个可能的最长回文子序列为 "bb"。
-def longest_palindrome_subsequence(s):
+def longest_palindrome_subsequence(sdd):
     if not s:
         return 0
     n = len(s)

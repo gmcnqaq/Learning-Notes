@@ -1,4 +1,4 @@
-from linked_list_basis import ListNode, build_linked_list
+from Python.LinkedList.basis.linked_list import ListNode, build_linked_list
 
 
 # LeetCode 234

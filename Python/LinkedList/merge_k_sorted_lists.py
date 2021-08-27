@@ -20,7 +20,7 @@
 # 输入：lists = [[]]
 # 输出：[]
 import heapq
-from linked_list_basis import LinkedList, \
+from Python.LinkedList.basis.linked_list import LinkedList, \
     build_linked_list, \
     ListNode
 

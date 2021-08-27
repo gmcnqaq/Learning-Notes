@@ -11,7 +11,7 @@
 # 输入：head = []
 # 输出：[]
 import heapq
-from linked_list_basis import ListNode, build_linked_list
+from Python.LinkedList.basis.linked_list import ListNode, build_linked_list
 
 
 # 自顶向下归并排序
@@ -119,7 +119,6 @@ def sort_list_monkey(head: ListNode) -> ListNode:
 
 if __name__ == '__main__':
     nums = [-1, 5, 3, 4, 0]
-    import time
 
     lst = build_linked_list(nums)
     # lst.head = sort_list_td(lst.head)
